@@ -425,10 +425,20 @@ Fluent:Notify({
     
     Fluent:Notify({
         Title = "注意",
-        Content = "我不知道这个怪物通知是否有效果，因为抓的是怪物出现后才会通知",
-        SubContent = "并不会通知怪物来的前兆", 
+        Content = "通知店员就是代表怪物出现，通知尖叫者就代表尖叫者出现",
+        SubContent = "通知前兆", 
         Duration = 10 
     })
+   
+    Fluent:Notify({
+        Title = "焦虑成功修改",
+        Content = "修改为额u-999999999",
+        SubContent = "通知", 
+        Duration = 10 
+    })
+    
+    game:GetService("Workspace").Configuration.Anxiety.Value = -99999999
+    
     local sound = Instance.new("Sound", workspace)
 sound.SoundId = "rbxassetid://6647898215"
 sound:Play()
@@ -469,8 +479,6 @@ local sound = Instance.new("Sound", workspace)
 sound.SoundId = "rbxassetid://6647898215"
 sound:Play()
 
-game:GetService("Workspace").Configuration.Anxiety.Value = -99999999
-
 function tableContains(table, element)
      for key, value in pairs(table) do
          if key == element then
@@ -482,9 +490,9 @@ end
 
 function notify(text)
      Fluent:Notify({
-         Title = "小玄奘丨入侵者丨地图地图",
+         Title = "小玄奘丨入侵者丨地图地铁",
          Content = text,
-         SubContent = "怪物已出现or怪物已消失", 
+         SubContent = "怪物已出现，或者，怪物已消失", 
          Duration = 10 
      })
      local sound = Instance.new("Sound", workspace)
@@ -565,13 +573,10 @@ sound:Play()
 end
 
 local MS = {
-     ["Caller"] = "Caller出现!!",
-     ["Screamer"] = "尖叫者!!!",
-     ["BoxOfShame"] = "BoxOfShame出现!!!",
-     ["ScreamerRunBy"] = "尖叫者出现征兆!!!!",
-     ["Train"] = "店员!!!!",
-     ["Trainstop"] = "店员消失",
-     ["ScreamerRunBystop"] = "尖叫者消失"
+     ["Caller"] = "店员",
+     ["Screamer"] = "尖叫者",
+     ["ScreamerRunBy"] = "尖叫者征兆",
+     ["Train"] = "店员征兆"
 }
 
 -- 监听子部件的添加
@@ -584,7 +589,7 @@ end)
 -- 监听子部件的移除
 workspace.ChildRemoved:Connect(function(child)
      if tableContains(MS, child.Name) then 
-         notify(MS[child.Name] .. " 已消失")
+         notify(MS[child.Name] .. " 怪物已消失")
      end
 end)
 
