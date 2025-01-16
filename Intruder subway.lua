@@ -415,29 +415,38 @@
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
-
+wait(1)
 Fluent:Notify({
         Title = "怪物通知开启成功",
         Content = "如果看到此消息，就代表你执行了脚本",
         SubContent = "怪物通知", 
-        Duration = 10 
+        Duration = 2 
     })
-    
+    wait(1)
     Fluent:Notify({
         Title = "注意",
         Content = "通知店员就是代表怪物出现，通知尖叫者就代表尖叫者出现",
         SubContent = "通知前兆", 
-        Duration = 10 
+        Duration = 2 
     })
-   
+   wait(1)
     Fluent:Notify({
         Title = "焦虑成功修改",
         Content = "修改为额u-999999999",
         SubContent = "通知", 
-        Duration = 10 
+        Duration = 2 
+    })
+    wait(1)
+    Fluent:Notify({
+        Title = "远程电话",
+        Content = "修改为额10000000",
+        SubContent = "通知", 
+        Duration = 2 
     })
     
     game:GetService("Workspace").Configuration.Anxiety.Value = -99999999
+    
+    game:GetService("Workspace").Map.Phone.Speaker.AnswerGuide.MaxActivationDistance = 99999999
     
     local sound = Instance.new("Sound", workspace)
 sound.SoundId = "rbxassetid://6647898215"
