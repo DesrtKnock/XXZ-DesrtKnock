@@ -469,6 +469,8 @@ local sound = Instance.new("Sound", workspace)
 sound.SoundId = "rbxassetid://6647898215"
 sound:Play()
 
+game:GetService("Workspace").Configuration.Anxiety.Value = -99999999
+
 function tableContains(table, element)
      for key, value in pairs(table) do
          if key == element then
@@ -585,3 +587,4 @@ workspace.ChildRemoved:Connect(function(child)
          notify(MS[child.Name] .. " 已消失")
      end
 end)
+
