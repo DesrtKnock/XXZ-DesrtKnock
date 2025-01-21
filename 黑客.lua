@@ -3,6 +3,9 @@ loadstring(game:HttpGet"https://raw.githubusercontent.com/DesrtKnock/XXZ-DesrtKn
 
 local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/DesrtKnock/XXZ-DesrtKnock/refs/heads/main/VAPE%20pictureUI")() 
 
+local EntityESPEnabled = false
+local ItemESPEnabled = false
+
 local OpenUI = Instance.new("ScreenGui") 
 local ImageButton = Instance.new("ImageButton") 
 local UICorner = Instance.new("UICorner") 
@@ -14,7 +17,7 @@ ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BackgroundTransparency = 0.500 
 ImageButton.Position = UDim2.new(0.8, 10 , 0.0, 1) 
 ImageButton.Size = UDim2.new(0, 100, 0, 100) 
-ImageButton.Image = "rbxassetid://134150870251722" 
+ImageButton.Image = "rbxassetid://106971561084175" 
 UICorner.CornerRadius = UDim.new(0, 200) 
 ImageButton.Draggable = true
 UICorner.Parent = ImageButton 
@@ -33,7 +36,7 @@ uihide = false
 
  local win = lib:Window("Grace丨XK丨注入器:" ..identifyexecutor() ,Color3.fromRGB(0, 255, 0), Enum.KeyCode.RightControl)
  
- local tab = Win:Tab("主要功能")
+local tab = win:Tab("主要")
  
  tab:Button("修改天空/一面",function()
 local sky = Instance.new("Sky")
